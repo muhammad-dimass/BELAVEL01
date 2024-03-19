@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 // use App\Imports\MultipleSheetsImport;
 use App\Imports\UserImport;
+use App\Imports\MultipleSheetsImport;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Excel;
@@ -24,9 +25,7 @@ class BelajarController extends Controller
     //     return view('belajar.cache', compact('data'));
     // }
 
-    public function import(Request $request)
-    {
-
+    public function import(Request $request){
         return view('import');
     }
 
@@ -34,8 +33,7 @@ class BelajarController extends Controller
     {
         // dd($request->all());
         // try {
-
-            Excel::import(new UserImport(),
+            Excel::import(new MultipleSheetsImport(),
              $request->file('file'));
             return redirect()->back();
         // } catch (\Exception $e) {
