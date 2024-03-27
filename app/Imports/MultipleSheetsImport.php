@@ -11,8 +11,8 @@ class MultipleSheetsImport implements WithMultipleSheets
   public function sheets(): array
   {
     return [
-        0 => new MobilImport(),
-        1 => new RumahImport(),
+        "Sheet1" => new MobilImport(),
+        "Sheet2" => new RumahImport(),
     ];
   }
 }
